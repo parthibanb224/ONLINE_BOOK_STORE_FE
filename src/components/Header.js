@@ -3,7 +3,7 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
 import { BsBag } from "react-icons/bs";
-import Logo from '../img/Logo.svg'
+import logo from '../Assets/Logo.svg'
 import ProfileButton from "./ProfileIcon";
 
 const Header = () => {
@@ -28,7 +28,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between h-full">
         <Link to={"/"}>
           <div className="w-[40px]">
-            <img src={Logo} alt="" />
+            <img src={logo} alt="logo" />
           </div>
         </Link>
 

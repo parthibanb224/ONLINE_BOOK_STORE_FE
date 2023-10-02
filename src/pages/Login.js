@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { TEInput, TERipple } from "tw-elements-react";
-import showPwdImg from '../img/Show-password.svg';
-import hidePwdImg from '../img/Hide-password.svg';
+import showPwdImg from '../Assets/Show-password.svg';
+import hidePwdImg from '../Assets/Hide-password.svg';
 import { useUser } from "../contexts/ProductContext";
 
 export default function Login() {

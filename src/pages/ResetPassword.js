@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import showPwdImg from '../img/Show-password.svg';
-import hidePwdImg from '../img/Hide-password.svg';
+import showPwdImg from '../Assets/Show-password.svg';
+import hidePwdImg from '../Assets/Hide-password.svg';
 import axios from 'axios';
 import { TEInput, TERipple } from "tw-elements-react";
 
