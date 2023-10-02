@@ -18,7 +18,7 @@ const UserContext = createContext({
   handleLogout: () => null,
   isLoggedin: Boolean,
   setIsLoggedin: () => Promise,
-  products: [],
+  products: null,
   setProducts: () => Promise,
   user: [],
   setUser: () => Promise,
@@ -33,7 +33,7 @@ export default function UsersContextProvider({ children }) {
   const [isLoggedin, setIsLoggedin] = useState(false);
   const [loaded, setLoaded] = useState("");
   const [signinUser, setSigninUser] = useState("");
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
   const [user, setUser] = useState([]);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 

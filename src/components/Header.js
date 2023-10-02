@@ -14,10 +14,19 @@ const Header = () => {
 
   // event listener
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
-    });
-  });
+    // Event listener callback function
+    const handleScroll = () => {
+      setIsActive(window.scrollY > 60);
+    };
+
+    // Add the event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header

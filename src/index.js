@@ -9,15 +9,13 @@ import UsersContextProvider from './contexts/ProductContext';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <SidebarProvider>
-
-    <Router>
-      <UsersContextProvider>
-        <CartProvider>
+  <Router>
+    <UsersContextProvider>
+      <CartProvider>
+        <SidebarProvider>
           <App />
-        </CartProvider>
-      </UsersContextProvider>
-    </Router>
-
-  </SidebarProvider>
+        </SidebarProvider>
+      </CartProvider>
+    </UsersContextProvider>
+  </Router>
 );
