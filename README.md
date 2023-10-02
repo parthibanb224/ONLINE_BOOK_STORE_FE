@@ -3,7 +3,7 @@
 
 ## 🌐 Live Demo
 
-Check out the live demo of the E-Commerce Shopping Website ➡️ [Live Demo](https://ecommerce-shop-react-app.vercel.app/)
+Check out the live demo of the E-Commerce Shopping Website ➡️ [Live Demo](https://online-books-stores.netlify.app/)
 
 
 Welcome to the GitHub repository of my fully responsive E-Commerce Shopping Website built using React and Tailwind CSS. This project is a modern and user-friendly e-commerce platform that fetches product data from the Fake Store API and utilizes the Context API for state management.
@@ -30,7 +30,7 @@ Welcome to the GitHub repository of my fully responsive E-Commerce Shopping Webs
 
 1. Clone the repository:
    ```
-   git clone https://github.com/rahil1202/online_store.git
+   git clone https://github.com/parthibanb224/ONLINE_BOOK_STORE_FE
    ```
 
 2. Navigate to the project directory:
