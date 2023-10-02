@@ -2,20 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-
-import ProductProvider from "./contexts/ProductContext";
+import { BrowserRouter as Router } from 'react-router-dom'
 import SidebarProvider from "./contexts/SidebarContext";
 import CartProvider from "./contexts/CartContext";
+import UsersContextProvider from './contexts/ProductContext';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <SidebarProvider>
-    <CartProvider>
-      <ProductProvider>
-        <React.StrictMode>
+
+    <Router>
+      <UsersContextProvider>
+        <CartProvider>
           <App />
-        </React.StrictMode>
-      </ProductProvider>
-    </CartProvider>
+        </CartProvider>
+      </UsersContextProvider>
+    </Router>
+
   </SidebarProvider>
 );
