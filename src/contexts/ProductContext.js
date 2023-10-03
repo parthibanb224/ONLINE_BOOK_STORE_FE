@@ -59,7 +59,7 @@ export default function UsersContextProvider({ children }) {
       .catch(err => {
         console.log(err)
       })
-  },[]);
+  });
 
   const navigat = useNavigate();
   const handleSignup = (event) => {
