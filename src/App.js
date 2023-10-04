@@ -11,6 +11,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Forgot from "./pages/Forgot";
 import MyAccount from "./pages/MyAccount";
 import './App.css'
+import OrdersPage from "./pages/OrdersPage";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/ResetPassword/:token" Component={ResetPassword}></Route>
           <Route path="/forgot" Component={Forgot}></Route>
           <Route path="/settings" Component={MyAccount}></Route>
+          <Route path="/orders" Component={OrdersPage}></Route>
         </Routes>
         <Sidebar />
         <Footer />

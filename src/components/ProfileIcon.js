@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaUser, FaCog, FaSignOutAlt } from "react-icons/fa";
+import { FaUser, FaCog, FaSignOutAlt,FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useUser } from "../contexts/ProductContext";
 
@@ -63,6 +63,9 @@ function ProfileButton() {
             )}
             <Link to="/settings" className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
               <FaCog className="inline-block mr-2" /> Settings
+            </Link>
+            <Link to="/orders" className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              <FaShoppingCart className="inline-block mr-2" /> orders
             </Link>
           </div>
         </div>

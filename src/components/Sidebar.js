@@ -13,7 +13,7 @@ import { useUser } from "../contexts/ProductContext";
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
   const { cart, clearCart, itemAmount, total } = useContext(CartContext);
-  const {signinUser} = useUser();
+  const { signinUser } = useUser();
 
   const handleCheckout = (e) => {
     e.preventDefault();
