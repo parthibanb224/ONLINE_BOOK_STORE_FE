@@ -2,12 +2,10 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa'; // Import star icons from React Icons
 
 const CustomerReview = ({ name, rating, comment }) => {
-  // Create an array of stars based on the rating
   const stars = Array.from({ length: rating }, (_, index) => (
     <FaStar key={index} className="text-yellow-500" />
   ));
 
-  // Calculate the number of empty stars (5 - rating)
   const emptyStars = Array.from({ length: 5 - rating }, (_, index) => (
     <FaStar key={index} className="text-gray-300" />
   ));

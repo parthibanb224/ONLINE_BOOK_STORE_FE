@@ -1,25 +1,29 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
+    const [message, setMessage] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission (e.g., sending data to a server)
-        console.log(formData);
-    };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setLoading(true);
+        const URL = process.env.NODE_ENV === 'development' ? `${process.env.REACT_APP_DEV_URL_FOR_BACKEND}/response` : `${process.env.REACT_APP_PRO_URL_FOR_BACKEND}/response`;
+        axios.post(URL, message)
+            .then(response => {
+                setLoading(false);
+                toast(response.data.message);
+            })
+            .catch(err => {
+                setLoading(false);
+                toast("Email Send Failed")
+                console.log(err);
+            })
+    }
 
     return (
         <div className="bg-white rounded-lg shadow-md p-4">
@@ -33,8 +37,7 @@ const ContactForm = () => {
                         type="text"
                         id="name"
                         name="name"
-                        value={formData.name}
-                        onChange={handleChange}
+                        onChange={(e) => setMessage({ ...message, name: e.target.value })}
                         className="w-full p-2 border rounded-md"
                         required
                     />
@@ -47,8 +50,7 @@ const ContactForm = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        onChange={(e) => setMessage({ ...message, email: e.target.value })}
                         className="w-full p-2 border rounded-md"
                         required
                     />
@@ -60,8 +62,7 @@ const ContactForm = () => {
                     <textarea
                         id="message"
                         name="message"
-                        value={formData.message}
-                        onChange={handleChange}
+                        onChange={(e) => setMessage({ ...message, message: e.target.value })}
                         className="w-full p-2 border rounded-md"
                         rows="4"
                         required
@@ -73,6 +74,7 @@ const ContactForm = () => {
                 >
                     Send Message
                 </button>
+                {loading ? <p className=' text-red-500 mt-1'>Sending...</p> : <ToastContainer />}
             </form>
         </div>
     );
